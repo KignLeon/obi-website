@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Block sensitive files/folders
+Disallow: /assets/
+Disallow: /imgs copy/
+
+Sitemap: https://oldschoolboxingandfitnesscenter.com/sitemap.xml

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: Title & Description -->
+  <title>Old School Boxing & Fitness | San Diego Boxing Gym</title>
+  <meta name="description"
+    content="Join Old School Boxing & Fitness in San Diego. We offer boxing classes, personal training, kids’ boxing, and fitness programs for all levels.">
+  <meta name="keywords"
+    content="San Diego boxing gym, boxing classes San Diego, kids boxing San Diego, personal boxing training San Diego, Old School Boxing">
+
+  <!-- Open Graph (Social Sharing) -->
+  <meta property="og:title" content="Old School Boxing & Fitness | San Diego Boxing Gym">
+  <meta property="og:description"
+    content="Hard work, discipline, and tradition — train at Old School Boxing & Fitness in San Diego. Memberships, drop-in passes, and personal coaching available.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://oldschoolboxing.com/">
+  <meta property="og:image" content="https://oldschoolboxing.com/assets/og-image.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Old School Boxing & Fitness | San Diego Boxing Gym">
+  <meta name="twitter:description"
+    content="Boxing classes, kids’ programs, and one-on-one coaching in San Diego. Train with the best at Old School Boxing & Fitness.">
+  <meta name="twitter:image" content="https://oldschoolboxing.com/assets/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- FontAwesome (Icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-zCn2x9+qVtZ2vDqkLqvV5lKXoVkHq1s3ku3Dl8QkD3i8e0R5FwA7zD1Z3bDHEOaY4yJjQk3xX3u6iLZz0GR3RQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Performance: Preconnect for Faster Font/Icon Loading -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+
+  <!-- Accessibility: Language -->
+  <meta http-equiv="Content-Language" content="en">
+  <!-- Custom Styles -->
+  <style>
+    /* Custom style for the modal card's glass effect */
+    .liquid-glass-modal {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px) saturate(150%);
+      -webkit-backdrop-filter: blur(10px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Glow effect on hover for CTA button */
+    .btn-glow-red:hover {
+      box-shadow: 0 0 10px rgba(220, 38, 38, 0.7);
+    }
+
+    /* Slide down effect for hamburger menu */
+    .mobile-menu {
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+    }
+  </style>
+
+</head>
+
+<body class="bg-gradient-to-br from-black via-gray-900 to-black text-white font-sans min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-lg border-b border-white/20 shadow-md z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="text-xl font-bold text-red-600">Old School Boxing</a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li><a href="index.html" class="hover:text-red-500 transition">Home</a></li>
+        <li><a href="enroll.html" target="_blank" class="hover:text-red-500 transition">Signup</a></li>
+        <li><a href="about.html" class="hover:text-red-500 transition">About</a></li>
+        <li><a href="schedule.html" class="hover:text-red-500 transition">Schedule</a></li>
+        <li><a href="pricing.html" class="hover:text-red-500 transition">Membership</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">&#9776;</button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden flex-col bg-black/95 text-white text-lg font-medium space-y-4 px-6 py-4 md:hidden">
+      <a href="index.html" class="hover:text-red-500 transition">Home</a>
+      <a href="enroll.html" target="_blank" class="hover:text-red-500 transition">Signup</a>
+      <a href="about.html" class="hover:text-red-500 transition">About</a>
+      <a href="schedule.html" class="hover:text-red-500 transition">Schedule</a>
+      <a href="pricing.html" class="hover:text-red-500 transition">Membership</a>
+    </div>
+  </header>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Highlight the current page link in BOTH desktop + mobile menus
+    const navLinks = document.querySelectorAll("nav ul li a, #mobile-menu a");
+    const currentPath = window.location.pathname.split("/").pop();
+
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("text-red-500", "font-semibold");
+      } else {
+        link.classList.remove("text-red-500", "font-semibold");
+      }
+    });
+  </script>
+
+  <!-- Pricing Section -->
+  <main class="flex-grow pt-28 pb-16">
+    <section class="max-w-7xl mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-bold text-center text-red-600 mb-2">Membership Plans</h1>
+      <p class="text-center text-gray-400 text-sm mb-12 italic">
+        * $75 Initiation Fee applies to all plans
+      </p>
+
+      <!-- Membership Pricing Grid (3 Columns) -->
+      <div class="grid gap-8 md:grid-cols-3">
+
+        <!-- Month-to-Month -->
+        <div
+          class="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg hover:shadow-red-500/30 transition flex flex-col">
+          <div
+            class="absolute top-0 right-0 bg-gray-600 text-white text-xs font-bold px-4 py-1 rounded-bl-xl rounded-tr-2xl uppercase tracking-wider">
+            Most Flexible</div>
+          <div class="flex-grow flex flex-col justify-between pt-4">
+            <div>
+              <h2 class="text-2xl font-bold text-red-500 mb-4">Month-to-Month</h2>
+              <p class="text-4xl font-extrabold mb-2">$150<span class="text-lg font-medium">/mo</span></p>
+              <p class="text-gray-400 mb-6">Flexible — cancel anytime.</p>
+              <ul class="space-y-3 text-gray-200">
+                <li>● Full access to gym & classes</li>
+                <li>● No long-term commitment</li>
+                <li>● Great for beginners</li>
+              </ul>
+            </div>
+            <a href="enroll.html" target="_blank"
+              class="mt-8 block w-full bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-xl font-semibold transition">Get
+              Started</a>
+          </div>
+        </div>
+
+        <!-- 6-Month Agreement (Popular) -->
+        <div
+          class="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg hover:shadow-red-500/30 transition flex flex-col">
+          <div
+            class="absolute top-0 right-0 bg-red-600 text-white text-xs font-bold px-4 py-1 rounded-bl-xl rounded-tr-2xl uppercase tracking-wider">
+            Popular</div>
+          <div class="flex-grow flex flex-col justify-between pt-4">
+            <div>
+              <h2 class="text-2xl font-bold text-red-500 mb-4">6-Month Agreement</h2>
+              <p class="text-4xl font-extrabold mb-2">$125<span class="text-lg font-medium">/mo</span></p>
+              <p class="text-green-400 font-semibold mb-6">Save $25/month</p>
+              <ul class="space-y-3 text-gray-200">
+                <li>● Everything in Month-to-Month</li>
+                <li>● More commitment, more savings</li>
+                <li>● Build consistency & results</li>
+              </ul>
+            </div>
+            <a href="enroll.html" target="_blank"
+              class="mt-8 block w-full bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-xl font-semibold transition">Get
+              Started</a>
+          </div>
+        </div>
+
+        <!-- 1-Year Agreement (Best Value) -->
+        <div
+          class="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg hover:shadow-red-500/30 transition flex flex-col">
+          <div
+            class="absolute top-0 right-0 bg-yellow-500 text-black text-xs font-bold px-4 py-1 rounded-bl-xl rounded-tr-2xl uppercase tracking-wider">
+            Best Value</div>
+          <div class="flex-grow flex flex-col justify-between pt-4">
+            <div>
+              <h2 class="text-2xl font-bold text-red-500 mb-4">1-Year Agreement</h2>
+              <p class="text-4xl font-extrabold mb-2">$100<span class="text-lg font-medium">/mo</span></p>
+              <p class="text-green-400 font-semibold mb-6">Save $50/month</p>
+              <ul class="space-y-3 text-gray-200">
+                <li>● Everything in 6-Month Plan</li>
+                <li>● Long-term results & growth</li>
+                <li>● Best for serious athletes</li>
+              </ul>
+            </div>
+            <a href="enroll.html" target="_blank"
+              class="mt-8 block w-full bg-red-600 hover:bg-red-700 text-white text-center py-3 rounded-xl font-semibold transition">Get
+              Started</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add-Ons Section -->
+      <div class="mt-20">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-red-600 mb-10">Additional Plans</h2>
+
+        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+
+          <!-- Children's Boxing Monthly -->
+          <div
+            class="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-6 shadow-lg hover:shadow-red-500/30 transition flex flex-col">
+            <h3 class="text-lg font-bold text-red-500 mb-2 text-center">Children's Boxing Monthly</h3>
+            <p class="text-2xl font-extrabold mb-2 text-center">$85<span class="text-sm font-medium">/mo</span></p>
+            <p class="text-gray-400 text-sm mb-6 text-center">Unlimited kids’ classes each month.</p>
+            <a href="enroll.html" target="_blank"
+              class="mt-auto block w-full bg-red-600 hover:bg-red-700 text-white text-center py-2 rounded-lg font-semibold transition">
+              Get Started
+            </a>
+          </div>
+
+          <!-- Pass Options (Modern Dropdown) -->
+          <div
+            class="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-6 shadow-lg hover:shadow-red-500/30 transition flex flex-col">
+            <h3 class="text-lg font-bold text-red-500 mb-4 text-center">Pass Options</h3>
+            <div class="relative">
+              <select
+                class="w-full appearance-none bg-black/60 border border-white/20 text-white rounded-lg p-3 pr-10 focus:outline-none focus:ring-2 focus:ring-red-600 transition">
+                <option>Children's Boxing Pass - $12 / session</option>
+                <option>Day Pass - $25 / session</option>
+                <option>Group Session - $15 / session</option>
+              </select>
+              <!-- Dropdown Arrow Icon -->
+              <span class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                <i class="fas fa-chevron-down"></i>
+              </span>
+            </div>
+            <a href="enroll.html" target="_blank"
+              class="mt-6 block w-full bg-red-600 hover:bg-red-700 text-white text-center py-2 rounded-lg font-semibold transition">
+              Purchase
+            </a>
+          </div>
+
+          <!-- One-on-One Training -->
+          <div
+            class="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-6 shadow-lg hover:shadow-red-500/30 transition flex flex-col">
+            <h3 class="text-lg font-bold text-red-500 mb-2 text-center">One-on-One Training</h3>
+            <p class="text-2xl font-extrabold mb-2 text-center">$100<span class="text-sm font-medium">/session</span>
+            </p>
+            <p class="text-gray-400 text-sm mb-6 text-center">
+              Private 1-hour session with a coach.
+            </p>
+            <a href="enroll.html" target="_blank"
+              class="mt-auto block w-full bg-red-600 hover:bg-red-700 text-white text-center py-2 rounded-lg font-semibold transition">
+              Book Now
+            </a>
+          </div>
+
+        </div>
+      </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white/10 backdrop-blur-lg border-t border-white/20 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 py-8 grid md:grid-cols-3 gap-6 text-gray-300">
+
+      <!-- About -->
+      <div>
+        <h3 class="text-lg font-bold text-red-500 mb-3">Old School Boxing</h3>
+        <p class="text-sm">Hard work, discipline, and tradition — join us to push your limits.</p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-bold text-red-500 mb-3">Contact</h3>
+        <p class="text-sm">5987 El Cajon Blvd, San Diego, CA 92115</p>
+        <p class="text-sm">Phone: (619) 555-1234</p>
+        <p class="text-sm">Email: info@oldschoolboxing.com</p>
+
+        <div class="flex space-x-4 mt-4 text-2xl">
+          <a href="https://www.tiktok.com/@oldschoolboxingcenter" target="_blank" class="hover:text-red-500">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://www.instagram.com/oldschoolboxingandfittness/" target="_blank" class="hover:text-red-500">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div>
+        <h3 class="text-lg font-bold text-red-500 mb-3">Find Us</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3351.9479222120937!2d-117.0684213!3d32.7603804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d95699c8700c555%3A0x1fe52e744e1eff0c!2sOld%20School%20Boxing%20And%20Fitness%20Center!5e0!3m2!1sen!2sus!4v1694988888888"
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+          class="rounded-lg shadow-md"></iframe>
+      </div>
+    </div>
+    <div class="text-center text-gray-400 text-sm py-4 border-t border-white/10">
+      © 2025 Old School Boxing & Fitness Center. All rights reserved.
+    </div>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.querySelector("header button"); // the hamburger
+      const navMenu = document.querySelector("header nav ul");    // the menu list
+      menuButton.addEventListener("click", () => {
+        navMenu.classList.toggle("hidden"); // toggles visibility
+      });
+    });
+  </script>
+
+</body>
+
+</html>

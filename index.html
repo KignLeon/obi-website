@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>Old School Boxing & Fitness | San Diego Boxing Gym</title>
+  <meta name="description"
+    content="Join Old School Boxing & Fitness in San Diego. Offering boxing classes, kids' boxing, personal training, and fitness programs for all levels." />
+  <meta name="keywords"
+    content="San Diego boxing gym, boxing classes San Diego, kids boxing, boxing training, personal training boxing, Old School Boxing" />
+  <meta name="author" content="Old School Boxing & Fitness" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Old School Boxing & Fitness | San Diego Boxing Gym" />
+  <meta property="og:description"
+    content="Boxing & fitness training in San Diego. Kids' classes, one-on-one training, and group sessions for all levels." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://oldschoolboxingandfitnesscenter.com/" />
+  <meta property="og:image" content="https://oldschoolboxingandfitnesscenter.com/assets/preview.jpg" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Old School Boxing & Fitness | San Diego Boxing Gym" />
+  <meta name="twitter:description" content="Boxing & fitness training in San Diego for all levels. Join today!" />
+  <meta name="twitter:image" content="https://oldschoolboxingandfitnesscenter.com/assets/preview.jpg" />
+
+  <!-- Icons -->
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com" defer></script>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+
+  <!-- Performance Hints -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Custom Styles -->
+  <style>
+    /* Custom style for the modal card's glass effect */
+    .liquid-glass-modal {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px) saturate(150%);
+      -webkit-backdrop-filter: blur(10px) saturate(150%);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Glow effect on hover for CTA button */
+    .btn-glow-red:hover {
+      box-shadow: 0 0 10px rgba(220, 38, 38, 0.7);
+    }
+
+    /* Slide down effect for hamburger menu */
+    .mobile-menu {
+      transition: max-height 0.3s ease-in-out;
+      overflow: hidden;
+    }
+  </style>
+
+  <!-- MailerLite Universal -->
+  <script>
+    (function (w, d, e, u, f, l, n) {
+      w[f] =
+        w[f] ||
+        function () {
+          (w[f].q = w[f].q || []).push(arguments);
+        };
+      l = d.createElement(e);
+      l.async = 1;
+      l.src = u;
+      n = d.getElementsByTagName(e)[0];
+      n.parentNode.insertBefore(l, n);
+    })(window, document, "script", "https://assets.mailerlite.com/js/universal.js", "ml");
+    ml("account", "1825467");
+  </script>
+  <!-- End MailerLite -->
+
+  <!-- Auto-trigger MailerLite popup after 5s -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(function () {
+        ml("show", "OAsLDy", true);
+      }, 5000);
+    });
+  </script>
+</head>
+
+<body class="bg-gradient-to-br from-black via-gray-900 to-black text-white font-sans min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 w-full bg-white/10 backdrop-blur-lg border-b border-white/20 shadow-md z-50">
+    <nav class="max-w-7xl mx-auto px-6 py-3 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="index.html" class="text-xl font-bold text-red-600">Old School Boxing</a>
+
+      <!-- Desktop Nav -->
+      <ul class="hidden md:flex space-x-6 font-medium">
+        <li><a href="index.html" class="hover:text-red-500 transition">Home</a></li>
+        <li><a href="enroll.html" target="_blank" class="hover:text-red-500 transition">Signup</a></li>
+        <li><a href="about.html" class="hover:text-red-500 transition">About</a></li>
+        <li><a href="schedule.html" class="hover:text-red-500 transition">Schedule</a></li>
+        <li><a href="pricing.html" class="hover:text-red-500 transition">Membership</a></li>
+      </ul>
+
+      <!-- Hamburger -->
+      <button id="menu-btn" class="md:hidden text-white text-2xl focus:outline-none">&#9776;</button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu"
+      class="hidden flex-col bg-black/95 text-white text-lg font-medium space-y-4 px-6 py-4 md:hidden">
+      <a href="index.html" class="hover:text-red-500 transition">Home</a>
+      <a href="enroll.html" target="_blank" class="hover:text-red-500 transition">Signup</a>
+      <a href="about.html" class="hover:text-red-500 transition">About</a>
+      <a href="schedule.html" class="hover:text-red-500 transition">Schedule</a>
+      <a href="pricing.html" class="hover:text-red-500 transition">Membership</a>
+    </div>
+  </header>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
+    // Highlight the current page link in BOTH desktop + mobile menus
+    const navLinks = document.querySelectorAll("nav ul li a, #mobile-menu a");
+    const currentPath = window.location.pathname.split("/").pop();
+
+    navLinks.forEach(link => {
+      if (link.getAttribute("href") === currentPath) {
+        link.classList.add("text-red-500", "font-semibold");
+      } else {
+        link.classList.remove("text-red-500", "font-semibold");
+      }
+    });
+  </script>
+
+  <!-- Hero -->
+  <main class="flex-grow pt-28 pb-16">
+    <section class="max-w-7xl mx-auto px-6">
+      <div
+        class="grid md:grid-cols-2 gap-12 items-center bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg">
+        <!-- Copy -->
+        <div>
+          <h1 class="text-4xl md:text-6xl font-extrabold uppercase leading-tight text-red-600">
+            Old School Boxing <span class="text-white">& Fitness Center</span>
+          </h1>
+          <p class="mt-4 text-gray-200 text-lg">
+            Old School Boxing & Fitness Center is forged on discipline, grit, and focus.
+            Join us for elite training programs designed to sharpen your body and mind.
+          </p>
+          <div class="mt-6 flex gap-4">
+            <!-- MailerLite popup trigger -->
+            <button
+              class="ml-onclick-form bg-red-600 hover:bg-red-700 px-6 py-3 rounded-xl font-bold text-white text-center transition"
+              onclick="ml('show', 'OAsLDy', true)">
+              Claim Your Free Session
+            </button>
+            <a href="schedule.html"
+              class="border border-white/20 px-6 py-3 rounded-xl font-bold text-gray-200 hover:text-red-500 transition">View
+              Schedule</a>
+          </div>
+        </div>
+        <!-- Image -->
+        <div>
+          <picture>
+            <source
+              srcset="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1759370295/san-diego-boxing-gym-coach-ernest_nqcdob.avif"
+              type="image/avif">
+            <source
+              srcset="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1759370293/san-diego-boxing-gym-coach-ernest_bwhrsy.webp"
+              type="image/webp">
+            <img
+              src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1759370294/san-diego-boxing-gym-coach-ernest_h3dfg7.jpg"
+              alt="Coach Ernest training a boxer at Old School Boxing & Fitness in San Diego"
+              class="rounded-xl object-cover">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+      <h2 class="text-center text-4xl font-bold text-red-600 mb-12">Why Choose Us</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1: Elite Coaches -->
+        <div
+          class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg hover:shadow-red-500/30 transition text-center">
+          <div class="bg-red-600 w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
+            <i class="fa-solid fa-gem text-white text-3xl"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-red-500">Elite Coaches</h3>
+          <p class="text-gray-200">Train with professionals who’ve lived and breathed boxing for over 50 years.</p>
+        </div>
+
+        <!-- Card 2: High Intensity -->
+        <div
+          class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg hover:shadow-red-500/30 transition text-center">
+          <div class="bg-red-600 w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
+            <i class="fa-solid fa-bolt text-white text-3xl"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-red-500">High Intensity</h3>
+          <p class="text-gray-200">Push yourself past your limits with conditioning designed for fighters.</p>
+        </div>
+
+        <!-- Card 3: Community -->
+        <div
+          class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg hover:shadow-red-500/30 transition text-center">
+          <div class="bg-red-600 w-16 h-16 flex items-center justify-center rounded-full mx-auto mb-4">
+            <i class="fa-solid fa-users text-white text-3xl"></i>
+          </div>
+          <h3 class="font-bold text-xl mb-2 text-red-500">Community</h3>
+          <p class="text-gray-200">Join a family of fighters that support and motivate each other daily.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="max-w-7xl mx-auto px-6">
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-red-600">Claim Your Free Session Today</h2>
+        <p class="text-gray-200 mb-6">Step into the ring with no risk. Experience the old-school training style for
+          yourself.</p>
+        <!-- MailerLite popup trigger button -->
+        <button
+          class="ml-onclick-form bg-red-600 hover:bg-red-700 px-8 py-4 rounded-xl font-bold text-white shadow-lg text-lg transition"
+          onclick="ml('show', 'OAsLDy', true)">
+          Book My Free Session
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white/10 backdrop-blur-lg border-t border-white/20 mt-auto">
+    <div class="max-w-7xl mx-auto px-6 py-8 grid md:grid-cols-3 gap-6 text-gray-300">
+
+      <!-- About -->
+      <div>
+        <h3 class="text-lg font-bold text-red-500 mb-3">Old School Boxing</h3>
+        <p class="text-sm">Hard work, discipline, and tradition — join us to push your limits.</p>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="text-lg font-bold text-red-500 mb-3">Contact</h3>
+        <p class="text-sm">5987 El Cajon Blvd, San Diego, CA 92115</p>
+        <p class="text-sm">Phone: (619) 555-1234</p>
+        <p class="text-sm">Email: info@oldschoolboxing.com</p>
+
+        <!-- Social Icons -->
+        <div class="flex space-x-4 mt-4 text-2xl">
+          <a href="https://www.tiktok.com/@oldschoolboxingcenter" target="_blank" class="hover:text-red-500">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://www.instagram.com/oldschoolboxingandfittness/" target="_blank" class="hover:text-red-500">
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div>
+        <h3 class="text-lg font-bold text-red-500 mb-3">Find Us</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3351.9479222120937!2d-117.0684213!3d32.7603804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d95699c870c555%3A0x1fe52e744e1eff0c!2sOld%20School%20Boxing%20And%20Fitness%20Center!5e0!3m2!1sen!2sus!4v1694988888888"
+          width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+          class="rounded-lg shadow-md"></iframe>
+      </div>
+    </div>
+    <div class="text-center text-gray-400 text-sm py-4 border-t border-white/10">
+      © 2025 Old School Boxing & Fitness Center. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const menuButton = document.querySelector("header button"); // the hamburger
+      const navMenu = document.querySelector("header nav ul");    // the menu list
+
+      menuButton.addEventListener("click", () => {
+        navMenu.classList.toggle("hidden"); // toggles visibility
+      });
+    });
+  </script>
+
+</body>
+
+</html>

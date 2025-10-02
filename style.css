@@ -1,0 +1,372 @@
+:root {
+  --red: #d22b2b;
+  --green: #00b36b;
+  --white: #f8fafb;
+  --muted: #f8fafbb3;
+  --glass: rgba(255, 255, 255, 0.04);
+  --glass-border: #ffffff0f;
+  --bg-a: #0d0d0d;
+  --bg-b: #141414;
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+* {
+  box-sizing: border-box
+}
+
+html {
+  scroll-behavior: smooth
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--white);
+  background: linear-gradient(135deg, var(--bg-a), var(--bg-b));
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem
+}
+
+/* Liquid glass */
+.liquid-glass {
+  background: var(--glass);
+  backdrop-filter: blur(10px) saturate(120%);
+  -webkit-backdrop-filter: blur(10px) saturate(120%);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.02);
+  border-radius: 14px;
+}
+
+/* header */
+#main-header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 18px;
+  z-index: 200;
+  padding: 10px
+}
+
+#main-header .inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1rem
+}
+
+.logo {
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.1rem
+}
+
+.nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.5rem 0.6rem;
+  border-radius: 8px;
+  font-weight: 600
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.7rem 1.25rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 700
+}
+
+.primary {
+  background: linear-gradient(90deg, var(--red), #b71b1b);
+  color: var(--white);
+  box-shadow: 0 8px 30px rgba(210, 43, 43, 0.12)
+}
+
+.ghost {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--muted)
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+  transition: transform .18s
+}
+
+/* hero */
+.hero {
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding-top: 70px
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  align-items: center;
+  gap: 2rem
+}
+
+.hero-copy h1 {
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 0.95;
+  margin: 0 0 0.6rem;
+  text-transform: uppercase
+}
+
+.lead {
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 1rem
+}
+
+.accent {
+  color: var(--red)
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem
+}
+
+/* hero media */
+.image-card {
+  overflow: hidden;
+  border-radius: 14px;
+  padding: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+
+.image-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.6)
+}
+
+/* grid */
+.grid {
+  display: grid;
+  gap: 1.25rem
+}
+
+.grid-3 {
+  grid-template-columns: repeat(3, 1fr)
+}
+
+@media (max-width:900px) {
+  .grid-3 {
+    grid-template-columns: 1fr
+  }
+
+  .hero-inner {
+    grid-template-columns: 1fr
+  }
+
+  .hero {
+    padding-top: 110px
+  }
+}
+
+/* cards */
+.card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+  padding: 1.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6)
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.7)
+}
+
+/* features */
+.section-title {
+  font-size: 1.6rem;
+  color: var(--green);
+  text-align: center;
+  margin: 2rem 0
+}
+
+.feature .icon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  color: var(--red)
+}
+
+.feature h3 {
+  margin: 0 0 0.5rem
+}
+
+/* testimonial */
+.testimonial-card {
+  display: block;
+  padding: 2rem;
+  text-align: center;
+  border-left: 4px solid rgba(0, 0, 0, 0.2);
+  font-style: italic
+}
+
+/* schedule */
+.week-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem
+}
+
+@media (max-width:900px) {
+  .week-grid {
+    grid-template-columns: repeat(1, 1fr)
+  }
+}
+
+.day h3 {
+  color: var(--red);
+  margin-top: 0
+}
+
+.schedule-hero .calendly-embed {
+  padding: 1.2rem;
+  text-align: center;
+  color: var(--muted)
+}
+
+/* pricing */
+.pricing-cards {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem
+}
+
+.pricing-card {
+  width: 320px;
+  position: relative
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--white);
+  margin: 0.8rem 0
+}
+
+/* form */
+.form-card input,
+.form-card select {
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  background: #111;
+  color: var(--white)
+}
+
+.form-card label {
+  display: block;
+  margin: 0.5rem 0 0.3rem;
+  color: var(--green);
+  font-weight: 700
+}
+
+.form-card .muted {
+  color: var(--muted)
+}
+
+.enroll-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 1rem
+}
+
+@media (max-width:900px) {
+  .enroll-grid {
+    grid-template-columns: 1fr
+  }
+}
+
+/* small helpers */
+.muted {
+  color: var(--muted)
+}
+
+.link {
+  color: var(--green);
+  text-decoration: underline
+}
+
+/* footer */
+.site-footer {
+  padding: 2rem 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4));
+  margin-top: 2rem
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap
+}
+
+/* buttons glow */
+.primary:hover {
+  box-shadow: 0 20px 60px rgba(210, 43, 43, 0.18)
+}
+
+.primary:active {
+  transform: translateY(-1px) scale(.998)
+}
+
+/* small nav toggle */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--muted);
+  font-size: 1.05rem
+}
+
+@media (max-width:900px) {
+  .nav {
+    display: none
+  }
+
+  .nav.active {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+  }
+
+  .nav-toggle {
+    display: block
+  }
+}

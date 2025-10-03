@@ -40,6 +40,25 @@
   <!-- Performance Hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- MailerLite Universal -->
+  <script>
+    (function (w, d, e, u, f, l, n) {
+      w[f] =
+        w[f] ||
+        function () {
+          (w[f].q = w[f].q || []).push(arguments);
+        };
+      l = d.createElement(e);
+      l.async = 1;
+      l.src = u;
+      n = d.getElementsByTagName(e)[0];
+      n.parentNode.insertBefore(l, n);
+    })(window, document, "script", "https://assets.mailerlite.com/js/universal.js", "ml");
+    ml("account", "1825467");
+  </script>
+  <!-- End MailerLite -->
+
   <!-- Custom Styles -->
   <style>
     /* Custom style for the modal card's glass effect */
@@ -74,12 +93,21 @@
       <a href="index.html" class="text-xl font-bold text-red-600">Old School Boxing</a>
 
       <!-- Desktop Nav -->
-      <ul class="hidden md:flex space-x-6 font-medium">
+      <ul class="hidden md:flex space-x-6 font-medium items-center">
         <li><a href="index.html" class="hover:text-red-500 transition">Home</a></li>
         <li><a href="enroll.html" target="_blank" class="hover:text-red-500 transition">Signup</a></li>
         <li><a href="about.html" class="hover:text-red-500 transition">About</a></li>
         <li><a href="schedule.html" class="hover:text-red-500 transition">Schedule</a></li>
         <li><a href="pricing.html" class="hover:text-red-500 transition">Membership</a></li>
+
+        <!-- CTA Button for Desktop -->
+        <li>
+          <button
+            class="ml-onclick-form bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold text-white shadow-md transition"
+            onclick="ml('show', 'OAsLDy', true)">
+            Try FREE
+          </button>
+        </li>
       </ul>
 
       <!-- Hamburger -->
@@ -94,6 +122,13 @@
       <a href="about.html" class="hover:text-red-500 transition">About</a>
       <a href="schedule.html" class="hover:text-red-500 transition">Schedule</a>
       <a href="pricing.html" class="hover:text-red-500 transition">Membership</a>
+
+      <!-- CTA Button for Mobile -->
+      <button
+        class="ml-onclick-form bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold text-white shadow-md transition"
+        onclick="ml('show', 'OAsLDy', true)">
+        Try FREE
+      </button>
     </div>
   </header>
 
@@ -179,9 +214,13 @@
         <h2 class="text-3xl md:text-4xl font-bold mb-6 text-red-600">Claim Your Free Session Today</h2>
         <p class="text-gray-200 mb-6">Step into the ring with no risk. Experience the old-school training style for
           yourself.</p>
-        <a href="enroll.html"
-          class="bg-red-600 hover:bg-red-700 px-8 py-4 rounded-xl font-bold text-white shadow-lg text-lg transition">Book
-          My Free Session</a>
+
+        <!-- MailerLite popup trigger button -->
+        <button
+          class="ml-onclick-form bg-red-600 hover:bg-red-700 px-8 py-4 rounded-xl font-bold text-white shadow-lg text-lg transition"
+          onclick="ml('show', 'OAsLDy', true)">
+          Book My Free Session
+        </button>
       </div>
     </section>
   </main>

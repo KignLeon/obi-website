@@ -42,6 +42,24 @@
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
   <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
 
+  <!-- MailerLite Universal -->
+  <script>
+    (function (w, d, e, u, f, l, n) {
+      w[f] =
+        w[f] ||
+        function () {
+          (w[f].q = w[f].q || []).push(arguments);
+        };
+      l = d.createElement(e);
+      l.async = 1;
+      l.src = u;
+      n = d.getElementsByTagName(e)[0];
+      n.parentNode.insertBefore(l, n);
+    })(window, document, "script", "https://assets.mailerlite.com/js/universal.js", "ml");
+    ml("account", "1825467");
+  </script>
+  <!-- End MailerLite -->
+
   <!-- Accessibility: Language -->
   <meta http-equiv="Content-Language" content="en">
   <!-- Custom Styles -->
@@ -78,12 +96,21 @@
       <a href="index.html" class="text-xl font-bold text-red-600">Old School Boxing</a>
 
       <!-- Desktop Nav -->
-      <ul class="hidden md:flex space-x-6 font-medium">
+      <ul class="hidden md:flex space-x-6 font-medium items-center">
         <li><a href="index.html" class="hover:text-red-500 transition">Home</a></li>
         <li><a href="enroll.html" target="_blank" class="hover:text-red-500 transition">Signup</a></li>
         <li><a href="about.html" class="hover:text-red-500 transition">About</a></li>
         <li><a href="schedule.html" class="hover:text-red-500 transition">Schedule</a></li>
         <li><a href="pricing.html" class="hover:text-red-500 transition">Membership</a></li>
+
+        <!-- CTA Button for Desktop -->
+        <li>
+          <button
+            class="ml-onclick-form bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold text-white shadow-md transition"
+            onclick="ml('show', 'OAsLDy', true)">
+            Try FREE
+          </button>
+        </li>
       </ul>
 
       <!-- Hamburger -->
@@ -98,6 +125,13 @@
       <a href="about.html" class="hover:text-red-500 transition">About</a>
       <a href="schedule.html" class="hover:text-red-500 transition">Schedule</a>
       <a href="pricing.html" class="hover:text-red-500 transition">Membership</a>
+
+      <!-- CTA Button for Mobile -->
+      <button
+        class="ml-onclick-form bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold text-white shadow-md transition"
+        onclick="ml('show', 'OAsLDy', true)">
+        Try FREE
+      </button>
     </div>
   </header>
 

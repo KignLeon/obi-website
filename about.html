@@ -41,29 +41,36 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-  <!-- Custom Styles -->
+  <!-- MailerLite Universal -->
+  <script>
+    (function (w, d, e, u, f, l, n) {
+      w[f] =
+        w[f] ||
+        function () {
+          (w[f].q = w[f].q || []).push(arguments);
+        };
+      l = d.createElement(e);
+      l.async = 1;
+      l.src = u;
+      n = d.getElementsByTagName(e)[0];
+      n.parentNode.insertBefore(l, n);
+    })(window, document, "script", "https://assets.mailerlite.com/js/universal.js", "ml");
+    ml("account", "1825467");
+  </script>
+  <!-- End MailerLite -->
+
   <style>
-    /* Custom style for the modal card's glass effect */
     .liquid-glass-modal {
       background: rgba(255, 255, 255, 0.08);
       backdrop-filter: blur(10px) saturate(150%);
-      -webkit-backdrop-filter: blur(10px) saturate(150%);
       border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 1px 3px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     }
 
-    /* Glow effect on hover for CTA button */
     .btn-glow-red:hover {
       box-shadow: 0 0 10px rgba(220, 38, 38, 0.7);
     }
-
-    /* Slide down effect for hamburger menu */
-    .mobile-menu {
-      transition: max-height 0.3s ease-in-out;
-      overflow: hidden;
-    }
   </style>
-
 </head>
 
 <body class="bg-gradient-to-br from-black via-gray-900 to-black text-white font-sans min-h-screen flex flex-col">
@@ -75,12 +82,21 @@
       <a href="index.html" class="text-xl font-bold text-red-600">Old School Boxing</a>
 
       <!-- Desktop Nav -->
-      <ul class="hidden md:flex space-x-6 font-medium">
+      <ul class="hidden md:flex space-x-6 font-medium items-center">
         <li><a href="index.html" class="hover:text-red-500 transition">Home</a></li>
         <li><a href="enroll.html" target="_blank" class="hover:text-red-500 transition">Signup</a></li>
         <li><a href="about.html" class="hover:text-red-500 transition">About</a></li>
         <li><a href="schedule.html" class="hover:text-red-500 transition">Schedule</a></li>
         <li><a href="pricing.html" class="hover:text-red-500 transition">Membership</a></li>
+
+        <!-- CTA Button for Desktop -->
+        <li>
+          <button
+            class="ml-onclick-form bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold text-white shadow-md transition"
+            onclick="ml('show', 'OAsLDy', true)">
+            Try FREE
+          </button>
+        </li>
       </ul>
 
       <!-- Hamburger -->
@@ -95,89 +111,92 @@
       <a href="about.html" class="hover:text-red-500 transition">About</a>
       <a href="schedule.html" class="hover:text-red-500 transition">Schedule</a>
       <a href="pricing.html" class="hover:text-red-500 transition">Membership</a>
+
+      <!-- CTA Button for Mobile -->
+      <button
+        class="ml-onclick-form bg-red-600 hover:bg-red-700 px-4 py-2 rounded-lg font-bold text-white shadow-md transition"
+        onclick="ml('show', 'OAsLDy', true)">
+        Try FREE
+      </button>
     </div>
   </header>
 
-  <!-- Scripts -->
   <script>
-    // Mobile menu toggle
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
-
-    menuBtn.addEventListener("click", () => {
-      mobileMenu.classList.toggle("hidden");
-    });
-
-    // Highlight the current page link in BOTH desktop + mobile menus
-    const navLinks = document.querySelectorAll("nav ul li a, #mobile-menu a");
-    const currentPath = window.location.pathname.split("/").pop();
-
-    navLinks.forEach(link => {
-      if (link.getAttribute("href") === currentPath) {
-        link.classList.add("text-red-500", "font-semibold");
-      } else {
-        link.classList.remove("text-red-500", "font-semibold");
-      }
-    });
+    menuBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
   </script>
 
-  <!-- Main Content -->
   <main class="flex-grow pt-28 pb-16">
 
     <!-- About Hero -->
-    <section class="max-w-7xl mx-auto px-6 mb-16">
-      <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg text-center">
-        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-red-600">
-          About <span class="text-white">Old School Boxing</span>
-        </h1>
-        <p class="text-gray-200 text-lg max-w-4xl mx-auto">
-          At Old School Boxing Gym, we believe boxing is more than just a sport — it’s a discipline, a lifestyle,
-          and a proven path to strength, confidence, and resilience. Since opening our doors in 2008, we’ve helped
-          athletes, beginners, and everyday people push past their limits and discover just how far they can go.
-          <br><br>
-          We don’t just teach boxing. We fuse boxing fundamentals with high-energy fitness training, creating an
-          innovative, results-driven experience that leaves you stronger, sharper, and more motivated every single
-          session.
-        </p>
+    <section class="max-w-7xl mx-auto px-6 mb-16 text-center">
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 p-8 shadow-lg">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-red-600">About <span class="text-white">Old School
+            Boxing</span></h1>
+        <p class="text-gray-200 max-w-4xl mx-auto">At Old School Boxing Gym, we believe boxing is more than just a sport
+          — it’s discipline, lifestyle, and resilience. Since 2008, we’ve helped athletes and beginners push past
+          limits. We fuse boxing fundamentals with fitness training for an experience that leaves you sharper and
+          stronger every session.</p>
       </div>
     </section>
 
     <!-- Video Showcase Section -->
     <section class="max-w-7xl mx-auto px-6 mb-20">
-      <h2 class="text-center text-4xl font-bold mb-6 text-red-600">Watch Our Story</h2>
+      <h2 class="text-center text-4xl font-bold text-red-600 mb-6">Watch Our Story</h2>
       <p class="text-center text-gray-300 mb-12 max-w-3xl mx-auto">
         Get an inside look at Old School Boxing — our philosophy, our coaches, and the community that makes us more than
         a gym.
       </p>
 
-      <div class="grid md:grid-cols-2 gap-8">
-        <!-- YouTube Embed -->
+      <!-- Featured Video -->
+      <div class="mb-12">
         <div
-          class="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden shadow-lg hover:shadow-red-500/30 transition">
-          <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/nBxSfcH6RsE" title="YouTube video"
-            frameborder="0" allowfullscreen>
+          class="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden shadow-lg hover:shadow-red-500/30 transition max-w-4xl mx-auto">
+          <iframe class="w-full aspect-video" src="https://www.youtube.com/embed/nBxSfcH6RsE"
+            title="Featured Old School Boxing Video" frameborder="0" allowfullscreen>
           </iframe>
-          <div class="p-4 text-center">
-            <a href="https://www.youtube.com/watch?v=nBxSfcH6RsE" target="_blank"
-              class="block mt-2 text-sm text-red-400 hover:text-red-300">
-              Watch on YouTube
-            </a>
-          </div>
         </div>
+      </div>
 
-        <!-- TikTok Embed -->
-        <div
-          class="relative bg-white/10 backdrop-blur-md rounded-2xl border border-white/20 overflow-hidden shadow-lg hover:shadow-red-500/30 transition">
-          <iframe class="w-full aspect-video" src="https://www.tiktok.com/embed/v2/7542638419764104478"
-            title="TikTok video" frameborder="0" allowfullscreen>
-          </iframe>
-          <div class="p-4 text-center">
-            <a href="https://www.tiktok.com/@oldschoolboxingcenter" target="_blank"
-              class="block mt-2 text-sm text-red-400 hover:text-red-300">
-              Watch more on TikTok
-            </a>
-          </div>
-        </div>
+      <!-- Other Videos Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+        <iframe class="w-full aspect-video rounded-xl shadow-lg" src="https://www.youtube.com/embed/mPh7ZoL5vZk"
+          allowfullscreen></iframe>
+        <iframe class="w-full aspect-video rounded-xl shadow-lg" src="https://www.youtube.com/embed/8zizRBHTAmc"
+          allowfullscreen></iframe>
+        <iframe class="w-full aspect-video rounded-xl shadow-lg" src="https://www.youtube.com/embed/7MNYkuE9L2Y"
+          allowfullscreen></iframe>
+        <iframe class="w-full aspect-video rounded-xl shadow-lg" src="https://www.youtube.com/embed/jjgbzxT2HSA"
+          allowfullscreen></iframe>
+        <iframe class="w-full aspect-video rounded-xl shadow-lg" src="https://www.youtube.com/embed/XKBi5yjNMps"
+          allowfullscreen></iframe>
+        <iframe class="w-full aspect-video rounded-xl shadow-lg" src="https://www.youtube.com/embed/4CewKB9zLqU"
+          allowfullscreen></iframe>
+      </div>
+
+      <!-- Social Cards -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center mt-12">
+        <a href="https://www.tiktok.com/@oldschoolboxingcenter" target="_blank"
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl hover:shadow-red-500/30 transition">
+          <i class="fab fa-tiktok text-3xl mb-2 text-red-500"></i>
+          <p class="text-gray-200">TikTok</p>
+        </a>
+        <a href="https://www.instagram.com/oldschoolboxingandfittness/" target="_blank"
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl hover:shadow-red-500/30 transition">
+          <i class="fab fa-instagram text-3xl mb-2 text-red-500"></i>
+          <p class="text-gray-200">Instagram</p>
+        </a>
+        <a href="https://www.youtube.com/channel/UCie4n2H1hRaS2XsUFpGyjkA" target="_blank"
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl hover:shadow-red-500/30 transition">
+          <i class="fab fa-youtube text-3xl mb-2 text-red-500"></i>
+          <p class="text-gray-200">YouTube</p>
+        </a>
+        <a href="https://www.facebook.com/oldschoolboxingcenter" target="_blank"
+          class="bg-white/10 backdrop-blur-md p-6 rounded-xl hover:shadow-red-500/30 transition">
+          <i class="fab fa-facebook text-3xl mb-2 text-red-500"></i>
+          <p class="text-gray-200">Facebook</p>
+        </a>
       </div>
     </section>
 
@@ -247,7 +266,7 @@
           <h3 class="text-xl font-bold text-red-500">Assistant Coach</h3>
           <p class="text-gray-200 mb-2">Jesse Cardenas</p>
           <p class="text-gray-200">Over 17 years competing amateur and pro, worked at Mayweather
-            Box + Fit and striving for excellence in & out the gym.</p>
+            Box+Fit and striving for excellence in & out the gym.</p>
         </div>
 
         <!-- Coach 4 (Fundamentals Coach – Eder Lopez) -->
@@ -267,7 +286,8 @@
           </picture>
           <h3 class="text-xl font-bold text-red-500">Fundamentals Coach</h3>
           <p class="text-gray-200 mb-2">Eder Lopez</p>
-          <p class="text-gray-200">20+ year member of Old School Boxing with amateur experience; expert in boxing fundamentals and strong foundations.</p>
+          <p class="text-gray-200">20+ year member of Old School Boxing with amateur experience; expert in boxing
+            fundamentals and strong foundations.</p>
         </div>
 
       </div>
